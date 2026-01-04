@@ -6,6 +6,10 @@
     import FacebookLogo from '$lib/assets/navigation/Facebook_Logo.svg'
     import InstagramLogo from '$lib/assets/navigation/Instagram_Logo.svg'
 
+    import List from "phosphor-svelte/lib/List";
+    import X from "phosphor-svelte/lib/X";
+    import { slide } from "svelte/transition";
+
     import { clsx } from "clsx";
     import { twMerge } from "tailwind-merge";
 
@@ -55,6 +59,8 @@
         href: string;
         content: string;
     };
+
+    let mobileMenuOpen = $state(false);
 </script>
 
 {#snippet ListItem({ className, title, content, href }: ListItemProps)}
@@ -66,7 +72,7 @@
       )}
                 {href}
         >
-            <div class="text-sm font-medium leading-none">{title}</div>
+            <div class="text-sm font-semibold leading-none">{title}</div>
             <p class="text-muted-foreground line-clamp-2 text-sm leading-snug">
                 {content}
             </p>
@@ -75,7 +81,7 @@
 {/snippet}
 
 
-<nav class="relative z-50 flex w-full items-center justify-between bg-[#f8f8f8] py-2">
+<nav class="relative z-50 flex w-full items-center justify-between bg-[#f8f8f8] py-2 font-mono">
     <div class="flex flex-row items-center justify-center shrink-0">
         <a href="/" class="px-2 md:px-12">
             <img src={CPMSOC_Logo} alt="CPMSoc Logo for main header component" class="h-14" />
@@ -115,7 +121,7 @@
                                         href="/blog"
                                         class="from-muted/50 to-muted bg-linear-to-b outline-hidden flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline focus:shadow-md"
                                 >
-                                    <div class="mb-2 mt-4 text-lg font-medium">Blog</div>
+                                    <div class="mb-2 mt-4 text-lg font-semibold">Blog</div>
                                     <p class="text-muted-foreground text-sm leading-tight">
                                         Interesting mathematics and computing ideas
                                     </p>
@@ -212,4 +218,78 @@
             </a>
         </div>
     </div>
+
+    <div class="md:hidden flex items-center pr-4">
+        <button
+                onclick={() => mobileMenuOpen = !mobileMenuOpen}
+                class="p-2 text-foreground focus:outline-none"
+                aria-label="Toggle Menu"
+        >
+            {#if mobileMenuOpen}
+                <X size={28} class="hover:cursor-pointer"/>
+            {:else}
+                <List size={28} class="hover:cursor-pointer"/>
+            {/if}
+        </button>
+    </div>
+
+<!--    This is for mobile screens with the navigation when the screen is too small -->
+    {#if mobileMenuOpen}
+        <div
+                transition:slide={{ duration: 200 }}
+                class="absolute top-full left-0 w-full bg-[#f8f8f8] border-b border-gray-200 shadow-xl flex flex-col p-6 gap-2 md:hidden z-40 max-h-[85vh] overflow-y-auto"
+        >
+            <a href="/" class="text-base font-semibold py-2 hover:text-accent-foreground">
+                Home
+            </a>
+
+            <details class="group">
+                <summary class="flex justify-between items-center text-base font-semibold py-2 cursor-pointer list-none text-foreground outline-none">
+                    Resources
+                    <CaretDown class="transition-transform duration-200 group-open:rotate-180" size={16}/>
+                </summary>
+                <div class="pl-4 flex flex-col gap-2 mt-1 border-l-2 border-gray-200 ml-1">
+                    <a href="/blog" class="py-1 text-sm text-muted-foreground hover:text-foreground">Blog</a>
+                    <a href="/cp101" class="py-1 text-sm text-muted-foreground hover:text-foreground">CP101</a>
+                    <a href="/cm101" class="py-1 text-sm text-muted-foreground hover:text-foreground">CM101</a>
+                </div>
+            </details>
+
+            <details class="group">
+                <summary class="flex justify-between items-center text-base font-semibold py-2 cursor-pointer list-none text-foreground outline-none">
+                    Events
+                    <CaretDown class="transition-transform duration-200 group-open:rotate-180" size={16}/>
+                </summary>
+                <div class="pl-4 flex flex-col gap-2 mt-1 border-l-2 border-gray-200 ml-1">
+                    {#each events as item}
+                        <a href={item.href} class="py-1 text-sm text-muted-foreground hover:text-foreground">{item.title}</a>
+                    {/each}
+                </div>
+            </details>
+
+            <details class="group">
+                <summary class="flex justify-between items-center text-base font-semibold py-2 cursor-pointer list-none text-foreground outline-none">
+                    About Us
+                    <CaretDown class="transition-transform duration-200 group-open:rotate-180" size={16}/>
+                </summary>
+                <div class="pl-4 flex flex-col gap-2 mt-1 border-l-2 border-gray-200 ml-1">
+                    {#each about_us as item}
+                        <a href={item.href} class="py-1 text-sm text-muted-foreground hover:text-foreground">{item.title}</a>
+                    {/each}
+                </div>
+            </details>
+
+            <div class="flex flex-row items-center gap-6 mt-6 pt-6 border-t border-gray-200">
+                <a href="https://discord.com/invite/9uxgxHY3pP" target="_blank" rel="noreferrer noopener" class="transition-opacity hover:opacity-70">
+                    <img src={DiscordLogo} alt="Discord" class="size-8" />
+                </a>
+                <a href="https://www.facebook.com/CPMSoc/" target="_blank" rel="noreferrer noopener" class="transition-opacity hover:opacity-70">
+                    <img src={FacebookLogo} alt="Facebook" class="size-8" />
+                </a>
+                <a href="https://www.instagram.com/cpmsoc_unsw/?hl=en" target="_blank" rel="noreferrer noopener" class="transition-opacity hover:opacity-70">
+                    <img src={InstagramLogo} alt="Instagram" class="size-8" />
+                </a>
+            </div>
+        </div>
+    {/if}
 </nav>

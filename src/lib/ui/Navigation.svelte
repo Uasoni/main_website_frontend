@@ -82,8 +82,7 @@
         </a>
     </div>
 
-    <div class="flex items-center pr-8">
-
+    <div class="hidden md:flex items-center pr-8">
         <NavigationMenu.Root class="relative z-10 flex justify-center">
 
             <NavigationMenu.List class="group flex list-none items-center justify-center p-1">
@@ -92,14 +91,14 @@
                             class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted focus:outline-hidden group inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent lg:px-4 px-3 py-2 text-sm font-medium transition-colors hover:bg-white disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
                             href="/"
                     >
-                        <span class="hidden lg:inline"> Home </span>
-                        <span class="inline lg:hidden"> Home </span>
+                        <span class="hidden lg:inline font-semibold"> Home </span>
+                        <span class="inline lg:hidden font-semibold"> Home </span>
                     </NavigationMenu.Link>
                 </NavigationMenu.Item>
 
                 <NavigationMenu.Item value="resources">
                     <NavigationMenu.Trigger
-                            class="hover:text-accent-foreground focus-visible:bg-muted focus-visible:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted focus-visible:outline-hidden group inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent lg:px-4 px-3 py-2 text-sm font-medium transition-colors hover:bg-white disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
+                            class="font-semibold hover:text-accent-foreground focus-visible:bg-muted focus-visible:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted focus-visible:outline-hidden group inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent lg:px-4 px-3 py-2 text-sm transition-colors hover:bg-white disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
                     >
                         Resources
                         <CaretDown
@@ -110,7 +109,7 @@
                     <NavigationMenu.Content
                             class="data-[motion=from-end]:animate-enter-from-right data-[motion=from-start]:animate-enter-from-left data-[motion=to-end]:animate-exit-to-right data-[motion=to-start]:animate-exit-to-left absolute left-0 top-0 sm:w-auto w-full"
                     >
-                        <ul class="m-0 grid list-none gap-x-2.5 p-3 lg:w-[400px] w-[35  0px] lg:grid-flow-col lg:grid-rows-2 sm:p-[22px]">
+                        <ul class="m-0 grid list-none gap-x-2.5 p-3 lg:w-[400px] w-[350px] lg:grid-flow-col lg:grid-rows-2 sm:p-[22px]">
                             <li class="row-span-2 mb-2 sm:mb-0">
                                 <NavigationMenu.Link
                                         href="/blog"
@@ -130,7 +129,7 @@
 
                 <NavigationMenu.Item>
                     <NavigationMenu.Trigger
-                            class="hover:text-accent-foreground focus-visible:bg-muted focus-visible:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted focus-visible:outline-hidden group inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent lg:px-4 px-3 py-2 text-sm font-medium transition-colors hover:bg-white disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
+                            class="font-semibold hover:text-accent-foreground focus-visible:bg-muted focus-visible:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted focus-visible:outline-hidden group inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent lg:px-4 px-3 py-2 text-sm transition-colors hover:bg-white disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
                     >
                         Events
                         <CaretDown
@@ -151,7 +150,7 @@
 
                 <NavigationMenu.Item>
                     <NavigationMenu.Trigger
-                            class="hover:text-accent-foreground focus-visible:bg-muted focus-visible:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted focus-visible:outline-hidden group inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent lg:px-4 px-3 py-2 text-sm font-medium transition-colors hover:bg-white disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
+                            class="font-semibold hover:text-accent-foreground focus-visible:bg-muted focus-visible:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted focus-visible:outline-hidden group inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent lg:px-4 px-3 py-2 text-sm transition-colors hover:bg-white disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
                     >
                         About Us
                         <CaretDown

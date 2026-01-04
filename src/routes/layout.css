@@ -24,7 +24,7 @@
     --border-input: hsla(240 6% 10% / 0.17);
 
     --accent: hsl(204 94% 94%);
-    --accent-foreground: hsl(204 80% 16%);
+    --accent-foreground: hsl(0, 0%, 0%);
 
     --popover: hsl(0 0% 100%);
     --popover-foreground: hsl(0 0% 9%);
@@ -103,6 +103,7 @@
     }
 }
 
+/* These are the custom fonts used in the project, mainly Instrument Sans and Space Mono */
 @layer utilities {
     .font-mono {
         font-family: 'Space Mono', ui-monospace, monospace;

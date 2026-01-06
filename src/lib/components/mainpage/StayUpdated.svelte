@@ -87,7 +87,7 @@
                 </div>
             </div>
 
-            <div class="flex-1 flex items-center justify-center perspective-[750px] xl:pr-30">
+            <div class="flex-1 flex items-center justify-center perspective-[750px] xl:pr-30 sm:mb-0 mb-12">
                 <div
                         class="brightness-105 relative w-[80%] sm:w-[60%] md:w-[90%] max-w-[500px] aspect-square transition-transform duration-1000 ease-out will-change-transform"
                         role="presentation"
@@ -148,6 +148,44 @@
                     />
                 </div>
             </div>
+
+            <!-- Bottom right circle-->
+            <svg
+                    class="absolute bottom-0 right-0 xl:w-[15%] w-[20%] h-auto pointer-events-none select-none z-0"
+                    viewBox="0 0 100 100"
+            >
+                <circle
+                        cx="100"
+                        cy="100"
+                        r="75"
+                        fill="#d9c5cc"
+                        opacity="0.3"
+                />
+
+                <circle
+                        cx="100"
+                        cy="100"
+                        r="85"
+                        fill="none"
+                        stroke="#5e508a"
+                        stroke-width="1.2"
+                        stroke-dasharray="4 4"
+                        opacity="0.6"
+                />
+                <text
+                        x="62"
+                        y="90"
+                        fill="#645a9e"
+                        font-family="font-instrument-sans"
+                        font-weight="bold"
+                        font-size="12"
+                        text-anchor="middle"
+                        letter-spacing="1.5"
+                        class="opacity-30"
+                >
+                    &gt;&gt;&gt;&gt;&gt;&gt;
+                </text>
+            </svg>
         </div>
     </div>
 </div>

@@ -26,7 +26,7 @@
     }
 </script>
 
-<div class="relative flex w-full md:h-[100vh] h-[100vh] items-center overflow-hidden justify-center p-[20px]">
+<div class="relative flex w-full md:h-[750px] h-[800px] items-center overflow-hidden justify-center p-[20px]">
 
     <img
             src={Stay_Updated}
@@ -44,9 +44,48 @@
 
         <div class="flex flex-col md:flex-row w-full h-full">
 
-            <div class="flex-1 flex flex-col justify-center px-8 md:px-8 xl:pl-20 gap-5">
+            <div class="flex-1 flex flex-col justify-center px-8 md:px-20 xl:pl-30 gap-5">
 
-                <h2 class="text-5xl md:text-7xl font-bold tracking-tight">
+                <div class="hidden md:block absolute -top-10 -left-10 pointer-events-none select-none z-0 overflow-visible"
+                     style="transform: rotate(-15deg); width: 240px; height: 150px;">
+
+                    <svg class="absolute inset-0 w-full h-full lg:-translate-y-0 -translate-y-3" viewBox="0 0 200 120">
+                        <rect x="1" y="1" width="198" height="118" fill="none" stroke="#5e508a" stroke-width="1.2" stroke-dasharray="5 5" opacity="0.4"/>
+                    </svg>
+
+                    <svg class="absolute inset-0 w-full h-full -translate-x-2 lg:-translate-y-2 -translate-y-5">
+                        <defs>
+                            <pattern id="x-pattern" width="60" height="60" patternUnits="userSpaceOnUse">
+                                <path d="M15 15L25 25M25 15L15 25" stroke="#5e508a" stroke-width="1.2" opacity="0.25"/>
+
+                                <path d="M45 45L55 55M55 45L45 55" stroke="#5e508a" stroke-width="1.2" opacity="0.25"/>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#x-pattern)" />
+                    </svg>
+                </div>
+
+                <div class="hidden md:block absolute lg:top-33 top-28 left-0 pointer-events-none opacity-75 select-none z-0">
+                    <p class="font-mono text-[14px] text-[#5e508a] opacity-60 mb-2 px-10">
+                        float Q_rsqrt(void) &#123; i  = 0x5f3759df - ( i >> 1 ); &#125;
+                    </p>
+
+                    <div
+                            class="w-70 h-7"
+                            style="background: linear-gradient(to right, #a6a8d9, #7d7ac4);"
+                    ></div>
+                </div>
+
+                <div
+                        class="absolute left-4 bottom-0 top-0 flex items-center pointer-events-none select-none"
+                        style="writing-mode: vertical-rl; transform: rotate(180deg);"
+                >
+                    <p class="font-mono text-[12px] md:text-base tracking-widest opacity-20 text-black/75 uppercase">
+                        010111010110101011010101101010011111011
+                    </p>
+                </div>
+
+                <h2 class="text-5xl md:text-7xl font-bold tracking-tight pt-5">
                     Stay Updated
                 </h2>
 
@@ -87,7 +126,7 @@
                 </div>
             </div>
 
-            <div class="flex-1 flex items-center justify-center perspective-[750px] xl:pr-30 sm:mb-0 mb-12">
+            <div class="flex-1 flex items-center justify-center perspective-[750px] xl:pr-30 sm:mb-0 mb-5">
                 <div
                         class="brightness-105 relative w-[80%] sm:w-[60%] md:w-[90%] max-w-[500px] aspect-square transition-transform duration-1000 ease-out will-change-transform"
                         role="presentation"
@@ -172,19 +211,19 @@
                         stroke-dasharray="4 4"
                         opacity="0.6"
                 />
-                <text
-                        x="62"
-                        y="90"
-                        fill="#645a9e"
-                        font-family="font-instrument-sans"
-                        font-weight="bold"
-                        font-size="12"
-                        text-anchor="middle"
-                        letter-spacing="1.5"
-                        class="opacity-30"
-                >
-                    &gt;&gt;&gt;&gt;&gt;&gt;
-                </text>
+<!--                <text-->
+<!--                        x="62"-->
+<!--                        y="90"-->
+<!--                        fill="#645a9e"-->
+<!--                        font-family="font-instrument-sans"-->
+<!--                        font-weight="bold"-->
+<!--                        font-size="12"-->
+<!--                        text-anchor="middle"-->
+<!--                        letter-spacing="1.5"-->
+<!--                        class="opacity-100"-->
+<!--                >-->
+<!--                    &gt;&gt;&gt;&gt;&gt;&gt;-->
+<!--                </text>-->
             </svg>
         </div>
     </div>

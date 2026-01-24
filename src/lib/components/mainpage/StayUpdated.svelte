@@ -66,7 +66,7 @@
 
         <div class="flex flex-col md:flex-row w-full h-full">
 
-            <div class="flex-1 flex flex-col justify-center px-8 md:px-20 xl:pl-30 gap-5 md:mt-20 lg:ml-10">
+            <div class="flex-1 flex flex-col justify-center px-8 md:px-20 xl:pl-30 gap-5 md:mt-12 lg:ml-0">
 
                 <div class="hidden md:block absolute -top-10 -left-10 pointer-events-none select-none z-0 overflow-visible"
                      style="transform: rotate(-15deg); width: 240px; height: 150px;">

@@ -4,6 +4,8 @@
 
     let { leftHex, rightHex, text } = $props();
 
+    const maskId = "mask-" + Math.random().toString(36).slice(2, 9);
+
     let randomString = $state("");
     const characters = "000000000000000000001111111111111111111111112233445566778899";
 
@@ -47,10 +49,8 @@
     <div
             class="absolute inset-0 z-10 pointer-events-none translate-y-3"
             style="
-                mask-image: url(#text-mask);
-                -webkit-mask-image: url(#text-mask);
-                mask-mode: luminance;
-                -webkit-mask-mode: luminance;
+                mask-image: url(#{maskId});
+                -webkit-mask-image: url(#{maskId});
                 mask-repeat: no-repeat;
                 mask-position: center;
                 mask-size: 100% 100%;
@@ -66,9 +66,7 @@
 
     <svg class="absolute inset-0 w-full h-full pointer-events-none">
         <defs>
-            <mask id="text-mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
-                <rect width="100%" height="100%" fill="black" />
-
+            <mask id={maskId} maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
                 <text
                         x="50%"
                         y="50%"
@@ -78,8 +76,8 @@
                         font-family="ui-sans-serif, system-ui, sans-serif"
                         font-weight="800"
                         letter-spacing="0.1em"
-                        opacity="100%"
-                        class="lg:text-[170px] text-[140px]"
+                        opacity="1"
+                        class="lg:text-[170px] text-[100px]"
                 >
                     {text}
                 </text>

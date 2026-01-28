@@ -7,7 +7,7 @@
 
 <div>
     <Hero />
-    <StayUpdated />
     <GetStarted />
+    <StayUpdated />
     <ContactUs />
 </div>

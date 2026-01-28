@@ -1,5 +1,6 @@
 <script>
     import MacGraphicError from '$lib/assets/error/MacGraphicError.jpg'
+    import { onMount } from 'svelte';
 
     // Jokes taken from https://github.com/hotheadhacker/no-as-a-service/blob/main/reasons.json
     const reasons = [
@@ -17,7 +18,11 @@
         "Pretend I gave you a clever excuse and just take the 'no' as implied."
     ];
 
-    const randomReason = reasons[Math.floor(Math.random() * reasons.length)];
+    let randomReason = $state(reasons[0])
+
+    onMount(() => {
+        randomReason = reasons[Math.floor(Math.random() * reasons.length)]
+    })
 </script>
 
 <div

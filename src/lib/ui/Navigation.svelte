@@ -81,7 +81,7 @@
 {/snippet}
 
 
-<nav class="relative z-50 flex w-full items-center justify-between bg-[#f8f8f8] py-2 font-mono">
+<nav class="relative z-100 flex w-full items-center justify-between bg-[#f8f8f8] py-2 font-mono">
     <div class="flex flex-row items-center justify-center shrink-0">
         <a href="/" class="px-2 md:px-12">
             <img src={CPMSOC_Logo} alt="CPMSoc Logo for main header component" class="h-14" />

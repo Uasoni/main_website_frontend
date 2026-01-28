@@ -1,5 +1,23 @@
 <script>
     import MacGraphicError from '$lib/assets/error/MacGraphicError.jpg'
+
+    // Jokes taken from https://github.com/hotheadhacker/no-as-a-service/blob/main/reasons.json
+    const reasons = [
+        "This request is above my computational pay grade.",
+        "My power supply filed for bankruptcy, so I can't give you a response.",
+        "I'll spare you a half-hearted yes and give you an honest no.",
+        "I'm on sleep mode, don't disturb me please",
+        "Effort is currently not supported by my operating system.",
+        "I'm still recovering from the last time I said yes.",
+        "My answer is like Schrödinger's cat: it's both yes and no until you realize it's just no.",
+        "Is it Opposite Day? Because otherwise my answer is no.",
+        "I'm still running on DDR4 ram, sorry.",
+        "I can't, I have an important meeting to stare at a spreadsheet and contemplate life.",
+        "I forgot how to say yes.",
+        "Pretend I gave you a clever excuse and just take the 'no' as implied."
+    ];
+
+    const randomReason = reasons[Math.floor(Math.random() * reasons.length)];
 </script>
 
 <div
@@ -11,6 +29,6 @@
     </h1>
 
     <p class="text-l text-gray-600 font-medium">
-        Oops! That page doesn't exist.
+        {randomReason}
     </p>
 </div>

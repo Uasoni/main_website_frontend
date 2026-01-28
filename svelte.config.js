@@ -15,7 +15,10 @@ const config = {
             pages: 'build',
             assets: 'build',
             fallback: 'index.html'
-        })
+        }),
+        prerender: {
+            handleHttpError: 'warn'
+        }
 	},
     compilerOptions: {
         // Since we want to use Svelte 5 only

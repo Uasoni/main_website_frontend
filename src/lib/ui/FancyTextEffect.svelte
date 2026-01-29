@@ -73,7 +73,6 @@
                         text-anchor="middle"
                         dominant-baseline="middle"
                         fill="white"
-                        font-family="ui-sans-serif, system-ui, sans-serif"
                         font-weight="800"
                         letter-spacing="0.1em"
                         opacity="1"

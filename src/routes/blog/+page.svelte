@@ -3,6 +3,9 @@
     import axios from 'axios'
     import FancyTextEffect from "$lib/ui/FancyTextEffect.svelte"
     import ErrorPage from '../../routes/+error.svelte';
+    import { env } from '$env/dynamic/public';
+
+    const API_BASE = env.PUBLIC_API_BASE_URL
 
     interface BlogPost {
         id: number;
@@ -56,10 +59,12 @@
 
             // If no tags selected do the standard GET request
             // If tags selected then we do the GET request thing which filters based on tags
+            console.log("Testing")
             if (selectedTags.length === 0) {
-                response = await axios.get('/api/blog_items/shortened/')
+                response = await axios.get(`${API_BASE}/api/blog_items/shortened/`)
+                console.log("Default /api/blog_items/shortened/ request")
             } else {
-                response = await axios.get('/api/blog_items/filter_by_tags/', {
+                response = await axios.get(`${API_BASE}/api/blog_items/filter_by_tags/`, {
                     params: {
                         tags: selectedTags
                     },
@@ -67,8 +72,12 @@
                         indexes: null
                     }
                 });
+                console.log("Filtered by tags /api/blog_items/filter_by_tags/ request")
             }
+            console.log("Request done!")
             blogPosts = response.data
+            console.log("The data given back is")
+            console.log(blogPosts)
         } catch (err) {
             error = "Could not load the blog posts."
         } finally {
@@ -103,7 +112,7 @@
     />
 </div>
 
-<div class="w-full max-w-[1600px] mx-auto px-4 md:px-8 py-8 font-sans text-black">
+<div class="w-full max-w-[1600px] mx-auto px-4 md:px-8 py-8 font-instrument-sans text-black">
     {#if error}
         <div class="min-h-[70vh] flex items-center justify-center py-20">
             <ErrorPage />

@@ -81,7 +81,7 @@
         <br/><br/>
         If you don’t have much CM experience, trying high school contest problems, even problems in junior or intermediate levels is a great starting point. This is by no means “starting off easy” as high school problems can still challenge your skills of problem solving and thinking outside of the box. High school maths competitions typically don’t require much university level mathematics knowledge such as calculus, linear algebra or analysis. The most difficult and notable maths competition for high school students is the International Mathematical Olympiad, which is of comparable difficulty to the most notable university mathematics competition Putnam.
         <br/><br/>
-        Some of the important topics to study after you get a hang of what mathematics competitions are like will be geometry, number theory, algebra, combinatorics etc. Check out our <a href="/workshps" target="_blank" rel="noreferrer" class="text-[#7862e2] hover:underline">slides and notes</a>!
+        Some of the important topics to study after you get a hang of what mathematics competitions are like will be geometry, number theory, algebra, combinatorics etc. Check out our <a href="/workshops" target="_blank" rel="noreferrer" class="text-[#7862e2] hover:underline">slides and notes</a>!
     </p>
 
     <h1 class="text-4xl font-bold text-[#5b8ddb] tracking-tight">

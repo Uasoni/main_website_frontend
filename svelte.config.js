@@ -17,7 +17,12 @@ const config = {
             fallback: 'index.html'
         }),
         prerender: {
-            handleHttpError: 'warn'
+            handleHttpError: ({ path, referrer, message }) => {
+                if (referrer && referrer.includes('/competitions/')) {
+                    return;
+                }
+                console.warn(message);
+            }
         }
 	},
     compilerOptions: {

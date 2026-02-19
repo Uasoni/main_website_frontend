@@ -1,3 +1,11 @@
+---
+title: "2025 Rocket Code Rumble (CPMSoc X Rocketry)"
+---
+
+<button onclick="toggleIneligible()">
+    Show/hide ineligible participants
+</button>
+
 <script>
     function toggleIneligible() {
         var xs = document.getElementsByClassName("ineligible");
@@ -13,15 +21,6 @@
 </script>
 
 <style>
-    h3 {
-        font-size: 2rem;
-        line-height: 1;
-        font-weight: 700;
-        color: #5b8ddb;
-        letter-spacing: -0.025em;
-        line-height: 3.75rem;
-    }
-
     .score {
         display: inline;
         border-radius: 10px;
@@ -39,49 +38,9 @@
     .score-8-9{background-color: rgba(0, 255, 0, 0.36);}
     .score-9-10{background-color: rgba(0, 255, 0, 0.4);}
     .score-10{background-color: rgba(0, 255, 0, 0.5);}
-
-    th {
-        vertical-align: bottom;
-        white-space: normal;
-        padding: 12px 8px;
-        text-align: left;
-        font-weight: 800;
-        font-size: 0.9rem;
-        line-height: 1.2;
-        color: #111827;
-    }
-
-    .score {
-        display: inline-block; /* changed from inline to fix padding/height */
-        border-radius: 8px;    /* slightly squarer than 10px */
-        padding: 1px;      /* tighter padding */
-        font-weight: 0;
-        text-align: center;
-        min-width: 32px;
-        margin: 2px;
-    }
-
-    td {
-        padding: 5px 0px 5px 0px;
-        vertical-align: middle;
-    }
-
-    tr {
-        border-bottom: 1px solid #e5e7eb; /* Light gray line */
-    }
 </style>
 
-<div class="max-w-[1000px] mx-auto gap-4 flex flex-col py-6 px-10">
-
-    <h1 class="text-5xl font-bold text-[#5b8ddb] tracking-tight leading-15">
-        2025 Rocket Code Rumble (CPMSoc X Rocketry)
-    </h1>
-
-    <button onclick={toggleIneligible} class="bg-gray-50 max-w-[400px] hover:bg-gray-100 hover:cursor-pointer">
-        Show/hide ineligible participants
-    </button>
-
-    <div class="table-responsive is-scroll-x is-size-7 overflow-scroll" id="container">
+<div class="table-responsive is-scroll-x is-size-7" id="container">
     <table class="table table-hover" data-sortable="" data-sortable-initialized="true">
         <thead>
         <tr>
@@ -1206,5 +1165,22 @@
     the participant who most recently made a submission which strictly increased their total score
 
     has a larger rank.
-</p>
-</div>
+<p>
+
+<script>
+    const container = document.getElementById('container');
+    let middleClick = false;
+
+    container.addEventListener('wheel', (e) => {
+        if (e.deltaY !== 0) {
+            e.preventDefault();
+            container.scrollLeft -= e.deltaY;
+        }
+    });
+
+    container.addEventListener('mousedown', (e) => {
+        if (e.button === 1 ) {
+            e.preventDefault();
+        }
+    });
+</script>

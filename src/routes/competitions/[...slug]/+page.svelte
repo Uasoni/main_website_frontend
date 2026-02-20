@@ -100,10 +100,10 @@
 
         {#if renderedContent}
             <div class="flex flex-col gap-4
-                [&>ul]:list-disc [&>ul]:list-outside [&>ul]:pl-5 [&>ul]:text-xl [&>ul]:leading-relaxed [&>ul]:ml-5 [&>ul]:space-y-1">
+    [&>ul]:list-disc [&>ul]:list-outside [&>ul]:pl-5 [&>ul]:text-xl [&>ul]:leading-relaxed [&>ul]:ml-5 [&>ul]:space-y-1
+    [&>ol]:list-decimal [&>ol]:list-outside [&>ol]:pl-5 [&>ol]:text-xl [&>ol]:leading-relaxed [&>ol]:ml-5 [&>ol]:space-y-1 [&>ol>li]:pl-2">
                 {@html renderedContent}
-            </div>
-        {:else}
+            </div>        {:else}
             <p class="text-xl text-gray-500">Competition not found.</p>
         {/if}
     </div>

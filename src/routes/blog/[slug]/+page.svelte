@@ -3,7 +3,7 @@
     import axios from 'axios';
     import { Link, EnvelopeSimpleOpen, FacebookLogo } from 'phosphor-svelte';
     import ErrorPage from '../../../routes/+error.svelte';
-    import { marked } from 'marked';
+    import { Marked } from 'marked';
     import katex from 'katex';
     import DOMPurify from 'dompurify';
     import 'katex/dist/katex.min.css';
@@ -49,7 +49,9 @@
         return `${d}/${m}/${y}`;
     }
 
-    marked.use({
+    const localMarkedInstance = new Marked();
+
+    localMarkedInstance.use({
         extensions: [{
             name: 'inlineMath',
             level: 'inline',
@@ -90,7 +92,7 @@
 
     function renderContent(markdown: string) {
         if (!markdown) return '';
-        const rawHtml = marked.parse(markdown) as string;
+        const rawHtml = localMarkedInstance.parse(markdown) as string;
 
         return DOMPurify.sanitize(rawHtml, {
             ADD_ATTR: ['style', 'target'],

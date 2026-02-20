@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { marked } from 'marked'
+    import { Marked } from 'marked'
     import CPMSocRocketCodeRumble from '$lib/assets/events/CPMSocRocketCodeRumble.jpg'
     import competitionsMarkdown from './competitions.md?raw';
     import { onMount } from 'svelte';
@@ -8,6 +8,8 @@
     let renderedContent = $state('');
 
     function renderMarkdown(markdown: string): string {
+        const localMarkedInstance = new Marked();
+
         const renderer = {
             heading(token: { text: string; depth: number }): string {
                 if (token.depth === 1) {
@@ -29,8 +31,8 @@
             }
         };
 
-        marked.use({ renderer: renderer as any });
-        return marked.parse(markdown) as string;
+        localMarkedInstance.use({ renderer: renderer as any });
+        return localMarkedInstance.parse(markdown) as string;
     }
 
     onMount(() => {

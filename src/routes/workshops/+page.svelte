@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { marked } from 'marked'
+    import { Marked } from 'marked'
     import CPMSocGroupPhoto from '$lib/assets/events/CPMSocGroupPhoto.jpg'
     import workshopsMarkdown from './workshops.md?raw';
     import { onMount } from 'svelte';
@@ -8,6 +8,8 @@
     let renderedContent = $state('');
 
     function renderMarkdown(markdown: string): string {
+        const localMarkedInstance = new Marked();
+
         const renderer = {
             heading(token: { text: string; depth: number }): string {
                 return `<h1 class="text-4xl font-bold text-[#5b8ddb] tracking-tight mt-2">${token.text}</h1>`;
@@ -26,8 +28,8 @@
             }
         };
 
-        marked.use({ renderer: renderer as any });
-        return marked.parse(markdown) as string;
+        localMarkedInstance.use({ renderer: renderer as any });
+        return localMarkedInstance.parse(markdown) as string;
     }
 
     onMount(() => {

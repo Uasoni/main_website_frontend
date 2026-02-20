@@ -49,62 +49,52 @@
         return `${d}/${m}/${y}`;
     }
 
-    // Render the markdown as html which can be displayed
-    function renderContent(markdown: string): string {
-        if (!markdown) return '';
-        marked.use({
-            extensions: [
-                {
-                    name: 'inlineMath',
-                    level: 'inline',
-                    start: (src) => src.indexOf('$'),
-                    tokenizer(src) {
-                        const match = src.match(/^\$+([^$\n]+?)\$+/);
-                        if (match) {
-                            return {
-                                type: 'inlineMath',
-                                raw: match[0],
-                                text: match[1].trim()
-                            };
-                        }
-                    },
-                    renderer(token) {
-                        try {
-                            return katex.renderToString(token.text, { displayMode: false });
-                        } catch {
-                            return token.text;
-                        }
+    marked.use({
+        extensions: [{
+            name: 'inlineMath',
+            level: 'inline',
+            start(src) { return src.indexOf('$'); },
+            tokenizer(src) {
+                const match = /^(\$)(?!\$)([^\$]+?)\1/.exec(src);
+                if (match) {
+                    return { type: 'inlineMath', raw: match[0], text: match[2] };
+                }
+            },
+            renderer(token) {
+                try {
+                    return katex.renderToString(token.text, { displayMode: false });
+                } catch {
+                    return token.raw;
+                }
+            }
+        },
+            {
+                name: 'blockMath',
+                level: 'block',
+                start(src) { return src.indexOf('$$'); },
+                tokenizer(src) {
+                    const match = /^(\$\$)([^\$]+?)\1/.exec(src);
+                    if (match) {
+                        return { type: 'blockMath', raw: match[0], text: match[2] };
                     }
                 },
-                {
-                    name: 'blockMath',
-                    level: 'block',
-                    start: (src) => src.indexOf('$$'),
-                    tokenizer(src) {
-                        const match = src.match(/^\$\$([\s\S]+?)\$\$/);
-                        if (match) {
-                            return {
-                                type: 'blockMath',
-                                raw: match[0],
-                                text: match[1].trim()
-                            };
-                        }
-                    },
-                    renderer(token) {
-                        try {
-                            return katex.renderToString(token.text, { displayMode: true });
-                        } catch {
-                            return token.text;
-                        }
+                renderer(token) {
+                    try {
+                        return katex.renderToString(token.text, { displayMode: true });
+                    } catch {
+                        return token.raw;
                     }
                 }
-            ]
-        });
+            }]
+    });
 
+    function renderContent(markdown: string) {
+        if (!markdown) return '';
         const rawHtml = marked.parse(markdown) as string;
 
         return DOMPurify.sanitize(rawHtml, {
-            ADD_TAGS: ["math", "semantics", "annotation", "mtext", "mn", "mo", "mi", "mspace", "mover", "munder", "msubsup", "mrow", "annotation-xml"]
+            ADD_ATTR: ['style', 'target'],
+            ADD_TAGS: ['iframe', 'math', 'semantics', 'mrow', 'mi', 'mo', 'mn', 'annotation', 'svg', 'path']
         });
     }
 

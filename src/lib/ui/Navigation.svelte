@@ -1,5 +1,5 @@
 <script lang="ts">
-    import CPMSOC_Logo from '$lib/assets/CPMSoc_Logo_With_Text.png'
+    import CPMSOC_Logo from '$lib/assets/CPMSoc_Logo_With_Text.svg'
     import { NavigationMenu } from "bits-ui";
     import CaretDown from "phosphor-svelte/lib/CaretDown";
     import DiscordLogo from '$lib/assets/navigation/Discord_Logo.svg'

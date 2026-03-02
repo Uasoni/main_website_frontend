@@ -1,9 +1,9 @@
 <script lang="ts">
-    import Hero_Background from '$lib/assets/hero/Hero_Background.png'
-    import Chip from '$lib/assets/hero/Chip.png'
-    import Chip_Inverted from '$lib/assets/hero/Chip_Inverted.png'
-    import Queen_Card from '$lib/assets/hero/Queen_Card.png'
-    import Coin from '$lib/assets/hero/Coin.png'
+    import Hero_Background from '$lib/assets/hero/Hero_Background.webp'
+    import Chip from '$lib/assets/hero/Chip.webp'
+    import Chip_Inverted from '$lib/assets/hero/Chip_Inverted.webp'
+    import Queen_Card from '$lib/assets/hero/Queen_Card.webp'
+    import Coin from '$lib/assets/hero/Coin.webp'
 
     let tiltX = $state(0);
     let tiltY = $state(0);

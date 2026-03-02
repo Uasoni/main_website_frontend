@@ -1,6 +1,6 @@
 <script lang="ts">
     import { Marked } from 'marked'
-    import CPMSocGroupPhoto from '$lib/assets/events/CPMSocGroupPhoto.jpg'
+    import CPMSocGroupPhoto from '$lib/assets/events/CPMSocGroupPhotoSmall.webp'
     import workshopsMarkdown from './workshops.md?raw';
     import { onMount } from 'svelte';
     import DOMPurify from 'dompurify';

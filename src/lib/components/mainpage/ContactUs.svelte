@@ -1,5 +1,5 @@
 <script>
-    import ContactUsBackground from "$lib/assets/contactus/ContactUsBackground.png";
+    import ContactUsBackground from "$lib/assets/contactus/ContactUsBackground.webp";
 </script>
 
 <div class="relative w-full md:h-[650px] h-[650px] overflow-hidden bg-black font-sans flex flex-col items-center justify-center px-10">

@@ -1,6 +1,6 @@
 <script>
     import FancyTextEffect from "$lib/ui/FancyTextEffect.svelte";
-    import CompetitiveMathematicsHeaderImage from '$lib/assets/resources/CompetitiveMathematicsHeaderImage.png'
+    import CompetitiveMathematicsHeaderImage from '$lib/assets/resources/CompetitiveMathematicsHeaderImage.webp'
 </script>
 
 <div class="w-full h-[170px] overflow-hidden">

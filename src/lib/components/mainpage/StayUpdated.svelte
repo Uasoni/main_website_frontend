@@ -1,9 +1,9 @@
 <script lang="ts">
-    import Stay_Updated from '$lib/assets/stayupdated/BackgroundStayUpdated.png'
-    import Sand_Solid_Colour_Stay_Updated from '$lib/assets/stayupdated/SandSolidColourStayUpdated.png'
+    import Stay_Updated from '$lib/assets/stayupdated/BackgroundStayUpdated.webp'
+    import Sand_Solid_Colour_Stay_Updated from '$lib/assets/stayupdated/SandSolidColourStayUpdated.webp'
 
-    import Paper_Swan from '$lib/assets/stayupdated/PaperSwan.png'
-    import Paper_Swan_Background from '$lib/assets/stayupdated/PaperSwanBackground.png'
+    import Paper_Swan from '$lib/assets/stayupdated/PaperSwan.webp'
+    import Paper_Swan_Background from '$lib/assets/stayupdated/PaperSwanBackground.webp'
 
     let tiltX = $state(0);
     let tiltY = $state(0);

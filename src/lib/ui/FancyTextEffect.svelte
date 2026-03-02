@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import GrainEffect from '$lib/assets/resources/GrainEffect.png';
+    import GrainEffect from '$lib/assets/resources/GrainEffect.webp';
 
     let { leftHex, rightHex, text } = $props();
 

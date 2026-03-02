@@ -1,6 +1,6 @@
 <script lang="ts">
     import { Marked } from 'marked'
-    import CPMSocRocketCodeRumble from '$lib/assets/events/CPMSocRocketCodeRumble.jpg'
+    import CPMSocRocketCodeRumble from '$lib/assets/events/CPMSocRocketCodeRumbleSmall.webp'
     import competitionsMarkdown from './competitions.md?raw';
     import { onMount } from 'svelte';
     import DOMPurify from 'dompurify';

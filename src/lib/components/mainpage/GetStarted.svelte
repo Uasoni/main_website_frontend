@@ -1,7 +1,7 @@
 <script>
-    import BackgroundGetStarted from '$lib/assets/getstarted/BackgroundGetStarted.png'
-    import PurpleForegroundGetStarted from '$lib/assets/getstarted/PurpleForegroundGetStarted.png'
-    import PolygonGetStarted from '$lib/assets/getstarted/PolygonGetStarted.png'
+    import BackgroundGetStarted from '$lib/assets/getstarted/BackgroundGetStarted.webp'
+    import PurpleForegroundGetStarted from '$lib/assets/getstarted/PurpleForegroundGetStarted.webp'
+    import PolygonGetStarted from '$lib/assets/getstarted/PolygonGetStarted.webp'
 </script>
 
 <div class="relative w-full md:h-[750px] h-[800px] overflow-hidden bg-black font-sans">

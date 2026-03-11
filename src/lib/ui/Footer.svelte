@@ -1,5 +1,5 @@
 <script lang="ts">
-    import CPMSOC_Logo from '$lib/assets/CPMSoc_Logo_With_Text.svg';
+    import CPMSOC_Logo from '$lib/assets/CPMSoc_Logo_With_Text_Baked.svg';
     import DiscordLogo from '$lib/assets/navigation/Discord_Logo.svg';
     import FacebookLogo from '$lib/assets/navigation/Facebook_Logo.svg';
     import InstagramLogo from '$lib/assets/navigation/Instagram_Logo.svg';

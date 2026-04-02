@@ -20,6 +20,9 @@
     [problems](mathematics/2026/Combinatorics%20Worksheet.pdf),
     [solutions](mathematics/2026/Combinatorics%20Worksheet%20Solutions.pdf),
     [recording](https://www.youtube.com/live/57mdDLa-4H4)
+-   Term 1 Week 7 - Honours Math Talk: An Exploration into Graph Theory, Coding Theory and Bianry Matriods:
+    [slides](mathematics/2026/Honours_Talk_Slides_RyanOng.pdf),
+    [recording](https://www.youtube.com/watch?v=13UpLqwrYqs)
 
 # Programming 2025
 -   Term 1 Week 2 - Intro to Competitive Programming:

@@ -24,13 +24,15 @@
         {
             name: "Jane Street",
             logo: JaneStreetLogo,
+            logo_css: "scale-150",
             text_p1: "<p>Jane Street is a quantitative trading firm with offices worldwide. We hire smart, humble people who love to solve problems, build systems, and test theories.</p><p>You'll learn something new every day in our office—whether it's connecting with a colleague to share perspectives, or participating in a talk, class, or game night. Our success is driven by our people and we never stop improving.</p>",
             href: "https://www.janestreet.com/"
         },
         {
             name: "Hudson River Trading",
             logo: HudsonRiverTradingLogo,
-            text_p1: "<p>Hudson River Trading (HRT) is a global quantitative trading firm that leverages cutting-edge technology, advanced research, and powerful computing to make markets more efficient. HRT brings together experts in mathematics, computer science, and engineering to design and optimize automated trading systems.</p><p>Collaboration is central to HRT’s culture—researchers, developers, and traders work closely to solve complex problems and continuously improve performance. The firm is committed to innovation, transparency, and building systems that operate at the forefront of modern financial markets.</p>",
+            logo_css: "scale-125",
+            text_p1: "<p>Hudson River Trading is a global quantitative trading firm that leverages cutting-edge technology, advanced research, and powerful computing to make markets more efficient. HRT brings together experts in mathematics, computer science, and engineering to design and optimize automated trading systems.</p><p>Collaboration is central to HRT’s culture—researchers, developers, and traders work closely to solve complex problems and continuously improve performance. The firm is committed to innovation, transparency, and building systems that operate at the forefront of modern financial markets.</p>",
             href: "https://www.janestreet.com"
         },
     ]
@@ -63,7 +65,7 @@
         {
             name: "Qube Research & Technologies",
             logo: QubeLogo,
-            logo_css: "scale-175",
+            logo_css: "scale-200",
             text_p1: "<p>Qube Research & Technologies (QRT) is a global quantitative investment firm focused on delivering high-quality returns through a scientific approach to financial markets. By combining data, research, and technology, QRT develops systematic trading strategies across a wide range of asset classes.</p><p>The firm fosters a collaborative and intellectually rigorous environment where researchers, engineers, and quants work together to solve complex problems. QRT places a strong emphasis on innovation, continuous learning, and applying cutting-edge techniques to stay at the forefront of quantitative finance.</p>",
             href: "https://www.qube-rt.com/"
         },
@@ -82,25 +84,28 @@
         {
             name: "UNSW School of Science",
             logo: UNSWScienceLogo,
+            logo_css: "scale-200",
             text_p1: "",
             href: ""
         },
         {
             name: "UNSW School of Mathematics",
             logo: UNSWMathematicsLogo,
+            logo_css: "scale-200",
             text_p1: "",
             href: ""
         },
         {
             name: "UNSW School of Computer Science & Engineering",
             logo: UNSWCSELogo,
+            logo_css: "scale-200",
             text_p1: "",
             href: ""
         }
     ]
 </script>
 
-<div class="max-w-[1100px] mx-auto flex flex-col py-6 px-10 font-instrument-sans">
+<div class="w-full max-w-[1500px] mx-auto flex flex-col py-6 px-6 md:px-10 xl:px-14 font-instrument-sans">
 
     <h1 class="text-5xl font-bold text-[#5b8ddb] mb-10">
         Sponsors

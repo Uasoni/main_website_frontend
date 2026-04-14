@@ -10,38 +10,38 @@
     let { sponsors } = $props<{ sponsors: Sponsor[] }>();
 </script>
 
-<div class="grid grid-cols-1 md:grid-cols-2">
-    {#each sponsors as sponsor, i}
-        {@const isLeftColumn = i % 2 === 0}
-        <div class="relative flex flex-col h-full py-8 md:border-b border-black
-                {isLeftColumn ? 'md:pr-15' : 'md:pl-10'}"
-        >
-            {#if isLeftColumn}
-                <div class="hidden md:block absolute right-0 top-10 bottom-6 w-[1px] bg-black"></div>
-            {/if}
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6">
+    {#each sponsors as sponsor}
+        {@const hasText = sponsor.text_p1.trim().length > 0}
+        <div class="group relative flex flex-col h-full overflow-hidden border border-black/10 bg-[#fbfbf8] px-6 py-8 transition-colors duration-300 hover:border-[#5b8ddb]/35 focus-within:border-[#5b8ddb]/35">
+            <div class="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[#5b8ddb]/0 transition-colors duration-300 group-hover:bg-[#5b8ddb] group-focus-within:bg-[#5b8ddb]"></div>
 
             {#if sponsor.href}
-                <div class="mb-6 h-16 flex items-center justify-center">
+                <div class={`flex items-center justify-center transition-all duration-300 ${hasText ? 'mb-0 min-h-[7rem] md:min-h-[8.5rem] md:group-hover:min-h-14 md:group-focus-within:min-h-14' : 'h-20 md:h-16'}`}>
                     <a
                             href={sponsor.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="h-full hover:cursor-pointer hover:scale-102 duration-200"
+                            class="flex h-full w-full items-center justify-center px-4 hover:cursor-pointer hover:scale-102 duration-200"
                     >
-                        <img src={sponsor.logo} alt={sponsor.name} class={`h-full object-contain object-left ${sponsor.logo_css ?? ''}`} />
+                        <img src={sponsor.logo} alt={sponsor.name} class={`h-full max-h-14 object-contain object-center transition-transform duration-300 ${sponsor.logo_css ?? ''}`} />
                     </a>
                 </div>
             {:else}
-                <div class="mb-0 h-24 flex items-center justify-center">
-                    <div class="h-full hover:cursor-pointer hover:scale-102 duration-200">
-                        <img src={sponsor.logo} alt={sponsor.name} class={`h-full object-contain object-left ${sponsor.logo_css ?? ''}`} />
+                <div class={`flex items-center justify-center transition-all duration-300 ${hasText ? 'mb-0 min-h-[7rem] md:min-h-[8.5rem] md:group-hover:min-h-14 md:group-focus-within:min-h-14' : 'h-20 md:h-16'}`}>
+                    <div class="flex h-full w-full items-center justify-center px-4 hover:cursor-pointer hover:scale-102 duration-200">
+                        <img src={sponsor.logo} alt={sponsor.name} class={`h-full max-h-14 object-contain object-center transition-transform duration-300 ${sponsor.logo_css ?? ''}`} />
                     </div>
                 </div>
             {/if}
 
-            <div class="text-sm font-instrument-sans leading-relaxed text-black text-justify space-y-6">
-                {@html sponsor.text_p1}
-            </div>
+            {#if hasText}
+                <div class="overflow-hidden transition-all duration-300 md:max-h-0 md:opacity-0 md:group-hover:max-h-[32rem] md:group-hover:opacity-100 md:group-focus-within:max-h-[32rem] md:group-focus-within:opacity-100">
+                    <div class="pt-4 text-sm font-instrument-sans leading-relaxed text-black text-justify space-y-6">
+                        {@html sponsor.text_p1}
+                    </div>
+                </div>
+            {/if}
         </div>
     {/each}
 </div>

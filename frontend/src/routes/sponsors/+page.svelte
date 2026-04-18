@@ -33,7 +33,7 @@
             logo: HudsonRiverTradingLogo,
             logo_css: "scale-125",
             text_p1: "<p>Hudson River Trading is a global quantitative trading firm that leverages cutting-edge technology, advanced research, and powerful computing to make markets more efficient. HRT brings together experts in mathematics, computer science, and engineering to design and optimize automated trading systems.</p><p>Collaboration is central to HRT’s culture—researchers, developers, and traders work closely to solve complex problems and continuously improve performance. The firm is committed to innovation, transparency, and building systems that operate at the forefront of modern financial markets.</p>",
-            href: "https://www.janestreet.com"
+            href: "https://www.hudsonrivertrading.com/"
         },
     ]
 
